@@ -1,0 +1,26 @@
+{
+  "name": "vanilla-javascript-todo",
+  "version": "1.0.0",
+  "description": "Specs :\r Vanilla JavaScript, HTML et CSS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matundu-Jules/vanilla-javascript-todo.git"
+  },
+  "author": "Matundu Jules-Langa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matundu-Jules/vanilla-javascript-todo/issues"
+  },
+  "homepage": "https://github.com/Matundu-Jules/vanilla-javascript-todo#readme",
+  "devDependencies": {
+    "prettier": "3.2.5",
+    "vite": "^5.1.5"
+  }
+}
