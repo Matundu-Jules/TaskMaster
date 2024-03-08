@@ -1,0 +1,37 @@
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 140
+      }
+    },
+    {
+      "files": ["*.js", "*.ts"],
+      "options": {
+        "printWidth": 100,
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": "*.prettierrc",
+      "options": {
+        "parser": "json",
+        "printWidth": 80
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown",
+        "printWidth": 100,
+        "tabWidth": 2
+      }
+    }
+  ]
+}
