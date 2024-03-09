@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #0a0903;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  margin-bottom: 20px;
+}
+form input {
+  flex: 1;
+  margin-right: 15px;
+}
+
+input {
+  padding: 8px 15px;
+  outline: 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  margin: 0 4px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  opacity: 0.7;
+}
+
+.btn-add {
+  background: #004e89;
+}
+.btn-edit {
+  background: #004e89;
+}
+.btn-delete {
+  background: #931621;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+li p {
+  flex: 1;
+}
+li .todo {
+  cursor: pointer;
+  flex: 0 0 20px;
+  height: 20px;
+  border-radius: 30px;
+  margin-right: 10px;
+  border: 2px solid #0a0903;
+}
+li .todo.done {
+  background: #0a0903;
+}
+
+.container {
+  width: 500px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+}

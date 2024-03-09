@@ -1,12 +1,28 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Liste de tâches</title>
-    <script type="module" src="./index.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo List</title>
   </head>
   <body>
-    <h1>Liste de tâches</h1>
+    <div class="container">
+      <h1>Todo List</h1>
+      <form>
+        <input type="text" />
+        <button class="btn btn-add">Add</button>
+      </form>
+      <ul>
+        <li>
+          <span class="todo done"></span>
+          <p>First todo example</p>
+          <button class="btn btn-edit">Edit</button>
+          <button class="btn btn-delete">Delete</button>
+        </li>
+      </ul>
+    </div>
+
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
