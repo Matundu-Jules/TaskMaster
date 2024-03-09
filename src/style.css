@@ -76,9 +76,16 @@ li .todo {
   border-radius: 30px;
   margin-right: 10px;
   border: 2px solid #0a0903;
+  transition: all 0.4s ease-in-out;
+}
+li .todo:hover {
+  background: #0a0903;
 }
 li .todo.done {
   background: #0a0903;
+}
+li .todo.done:hover {
+  background: #fff;
 }
 
 .container {

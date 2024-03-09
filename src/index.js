@@ -1,7 +1,10 @@
 import './style.css'
+import { displayTodos } from './features/displayTodos.js'
+import { addTodo } from './features/addTodo.js'
 
-// Get html elements
-const todosListElem = document.querySelector('ul')
+// Get form and input element
+const form = document.querySelector('form')
+const input = document.querySelector('form > input')
 
 // Array of todos
 const todos = [
@@ -16,35 +19,18 @@ const todos = [
 ]
 
 // Display todos
-const displayTodo = (todosArray) => {
-    // Convert array of todos in node
-    const todosNode = todos.map((todo, index) => {
-        return createTodoElement(todo, index)
-    })
+displayTodos(todos)
 
-    console.log('todosNode : ', todosNode)
-    console.log('...todosNode : ', ...todosNode)
+form.addEventListener('submit', (e) => {
+    e.preventDefault() // Delete default comportement
 
-    // Clear existing content from todo list
-    todosListElem.innerHTML = ''
+    // Save input value and clear input
+    const value = input.value
+    input.value = ''
 
-    // Add elements in DOM
-    todosListElem.append(...todosNode)
-}
+    // Add the new todo in the todos array
+    addTodo(todos, value)
 
-// Convert todo in html element
-const createTodoElement = (todo, index) => {
-    // Create HTML element
-    const li = document.createElement('li')
-
-    // Define content of html element
-    li.innerHTML = `
-    <span class="todo ${todo.done ? 'done' : ''}"></span>
-    <p>${todo.text}</p>
-    <button class="btn btn-delete">Supprimer</button>
-    `
-
-    return li
-}
-
-displayTodo()
+    // Refresh todo list
+    displayTodos(todos)
+})
