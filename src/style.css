@@ -88,6 +88,13 @@ li .todo.done:hover {
   background: #fff;
 }
 
+.todo-text {
+  color: #0a0903;
+}
+.todo-text-done {
+  text-decoration: line-through;
+}
+
 .container {
   width: 500px;
   border: 1px solid #eee;

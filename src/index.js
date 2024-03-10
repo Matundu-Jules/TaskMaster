@@ -21,6 +21,7 @@ const todos = [
 // Display todos
 displayTodos(todos)
 
+// submit event on form
 form.addEventListener('submit', (e) => {
     e.preventDefault() // Delete default comportement
 
@@ -33,4 +34,7 @@ form.addEventListener('submit', (e) => {
 
     // Refresh todo list
     displayTodos(todos)
+
+    // Set focus on input
+    input.focus()
 })

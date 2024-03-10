@@ -7,7 +7,7 @@ const todosListElem = document.querySelector('ul')
 export const displayTodos = (todosArray) => {
     // Convert array of todos in node
     const todosNode = todosArray.map((todo, index) => {
-        return createTodoElement(todo, index)
+        return createTodoElement(todo, index, todosArray)
     })
 
     // Clear existing content from todo list
