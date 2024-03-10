@@ -68,6 +68,7 @@ li {
 }
 li p {
   flex: 1;
+  cursor: pointer;
 }
 li .todo {
   cursor: pointer;

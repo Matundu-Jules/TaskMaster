@@ -1,4 +1,5 @@
 import { deleteTodo } from './deleteTodo.js'
+import { toggleTodo } from './toggleTodo.js'
 
 // Convert todo in html element
 export const createTodoElement = (todo, index, todosArray) => {
@@ -11,7 +12,10 @@ export const createTodoElement = (todo, index, todosArray) => {
     deleteBtn.classList.add('btn', 'btn-delete')
 
     // click event on delete btn
-    deleteBtn.addEventListener('click', (e) => deleteTodo(todosArray, index))
+    deleteBtn.addEventListener('click', (e) => {
+        e.stopPropagation()
+        deleteTodo(todosArray, index)
+    })
 
     // Define content of html element
     li.innerHTML = `
@@ -21,6 +25,11 @@ export const createTodoElement = (todo, index, todosArray) => {
 
     // add btn to dom
     li.append(deleteBtn)
+
+    // event click on li :  toggle state of todo
+    li.addEventListener('click', (e) => {
+        toggleTodo(todosArray, index)
+    })
 
     return li
 }
