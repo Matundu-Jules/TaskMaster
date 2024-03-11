@@ -11,10 +11,12 @@ const todos = [
     {
         text: "I'm a todo",
         done: false,
+        editMode: true,
     },
     {
         text: 'Todo done',
         done: true,
+        editMode: false,
     },
 ]
 

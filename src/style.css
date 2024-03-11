@@ -31,6 +31,8 @@ input {
 button {
   cursor: pointer;
   color: white;
+  width: 80px;
+  height: 35px;
   margin: 0 4px;
   padding: 10px 20px;
   border: 0;
@@ -49,6 +51,12 @@ button:hover {
   background: #004e89;
 }
 .btn-delete {
+  background: #931621;
+}
+.btn-save {
+  background: #2a7f62;
+}
+.btn-cancel {
   background: #931621;
 }
 
