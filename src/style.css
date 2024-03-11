@@ -14,7 +14,7 @@ body {
 
 form {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 form input {
   flex: 1;
@@ -112,4 +112,16 @@ li .todo.done:hover {
 
   display: flex;
   flex-direction: column;
+}
+
+/* Errors */
+.error {
+  color: #931621;
+}
+
+.error-empty-msg {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
 }

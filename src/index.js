@@ -1,6 +1,7 @@
 import './style.css'
 import { displayTodos } from './features/displayTodos.js'
 import { addTodo } from './features/addTodo.js'
+import { deleteErrorEmptyInput, errorEmptyInput } from './features/errors.js'
 
 // Get form and input element
 const form = document.querySelector('form')
@@ -27,16 +28,25 @@ displayTodos(todos)
 form.addEventListener('submit', (e) => {
     e.preventDefault() // Delete default comportement
 
-    // Save input value and clear input
-    const value = input.value
-    input.value = ''
+    // verify if the input is empty
+    if (input.value.trim() === '') {
+        // set error msg
+        errorEmptyInput()
+    } else {
+        // delete error msg if exist
+        deleteErrorEmptyInput()
 
-    // Add the new todo in the todos array
-    addTodo(todos, value)
+        // Save input value and clear input
+        const value = input.value.trim()
+        input.value = ''
 
-    // Refresh todo list
-    displayTodos(todos)
+        // Add the new todo in the todos array
+        addTodo(todos, value)
 
-    // Set focus on input
-    input.focus()
+        // Refresh todo list
+        displayTodos(todos)
+
+        // Set focus on input
+        input.focus()
+    }
 })
