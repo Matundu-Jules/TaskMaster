@@ -1,5 +1,7 @@
 # Todo List
 
+![Todo List screenshot](image.png)
+
 ## Specs :
 
 Vanilla JavaScript, HTML and CSS.
