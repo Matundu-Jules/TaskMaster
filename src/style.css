@@ -70,16 +70,16 @@ ul {
 }
 
 li {
+  cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  padding: 10px 5px;
+  border-radius: 6px;
 }
 li p {
   flex: 1;
-  cursor: pointer;
 }
 li .todo {
-  cursor: pointer;
   flex: 0 0 20px;
   height: 20px;
   border-radius: 30px;
@@ -87,14 +87,8 @@ li .todo {
   border: 2px solid #0a0903;
   transition: all 0.4s ease-in-out;
 }
-li .todo:hover {
-  background: #0a0903;
-}
 li .todo.done {
   background: #0a0903;
-}
-li .todo.done:hover {
-  background: #fff;
 }
 
 .todo-text {
@@ -112,6 +106,10 @@ li .todo.done:hover {
 
   display: flex;
   flex-direction: column;
+}
+
+.input-todo-edit {
+  flex: auto;
 }
 
 /* Errors */

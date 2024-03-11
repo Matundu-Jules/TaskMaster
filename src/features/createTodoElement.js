@@ -27,21 +27,60 @@ export const createTodoElement = (todo, index, todosArray) => {
     editBtn.addEventListener('click', (e) => {
         e.stopPropagation()
         toggleEditMode(index, todosArray)
+
+        // wait maj of dom for clic and dblclic focus on edit mode
+        setTimeout(() => {
+            document.querySelector('.input-todo-edit').focus()
+        }, 200)
     })
 
-    // Define content of html element
-    li.innerHTML = `
-    <span class="todo ${todo.done ? 'done' : ''}"></span>
-    <p class="todo-text ${todo.done ? 'todo-text-done' : ''}">${todo.text}</p>
-    `
+    // span
+    const span = document.createElement('span')
+    span.classList.add('todo')
+    if (todo.done) span.classList.add('done')
+
+    // p
+    const p = document.createElement('p')
+    p.classList.add('todo-text')
+    if (todo.done) p.classList.add('todo-text-done')
+    p.innerText = todo.text
 
     // event click on li :  toggle state of todo
+    let doubleClickDetected = false
     li.addEventListener('click', (e) => {
-        toggleTodo(todosArray, index)
+        e.stopPropagation()
+
+        if (!doubleClickDetected) {
+            setTimeout(() => {
+                toggleTodo(todosArray, index)
+            }, 200)
+        }
+
+        doubleClickDetected = false
+    })
+
+    // edit on double click
+    li.addEventListener('dblclick', (e) => {
+        doubleClickDetected = true
+        editBtn.dispatchEvent(new Event('click'))
+    })
+
+    li.addEventListener('mouseover', (e) => {
+        li.style.background = '#eee'
+        if (!todo.done) {
+            span.style.background = '#0a0903'
+        }
+    })
+
+    li.addEventListener('mouseout', (e) => {
+        li.style.background = '#fff'
+        if (!todo.done) {
+            span.style.background = '#fff'
+        }
     })
 
     // add btn to dom
-    li.append(editBtn, deleteBtn)
+    li.append(span, p, editBtn, deleteBtn)
 
     return li
 }
