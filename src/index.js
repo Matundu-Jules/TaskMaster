@@ -38,10 +38,15 @@ form.addEventListener('submit', (e) => {
 
         // Save input value and clear input
         const value = input.value.trim()
+
+        // Set first character to uppercase
+        const newValue = value.charAt(0).toUpperCase() + value.slice(1)
+
+        // clear input
         input.value = ''
 
         // Add the new todo in the todos array
-        addTodo(todos, value)
+        addTodo(todos, newValue)
 
         // Refresh todo list
         displayTodos(todos)

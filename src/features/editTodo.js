@@ -41,8 +41,10 @@ export const toggleEditMode = (index, todosArray) => {
 }
 
 const editTodo = (index, input, todosArray) => {
-    const value = input.value
-    todosArray[index].text = value
+    const value = input.value.trim()
+    const newValue = value.charAt(0).toUpperCase() + value.slice(1)
+
+    todosArray[index].text = newValue
     todosArray[index].editMode = false
     displayTodos(todosArray)
 }
