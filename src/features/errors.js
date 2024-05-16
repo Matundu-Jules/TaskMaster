@@ -6,7 +6,7 @@ export const errorEmptyInput = () => {
 
     if (errorMsgExist.length === 0) {
         const errorMsg = document.createElement('p')
-        errorMsg.innerHTML = 'Insert your task please.'
+        errorMsg.innerHTML = 'Insérez votre tâche, s’il vous plaît..'
         errorMsg.classList.add('error', 'error-empty-msg')
         form.insertAdjacentElement('afterend', errorMsg)
         input.focus()

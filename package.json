@@ -4,7 +4,7 @@
   "description": "Specs :\r Vanilla JavaScript, HTML et CSS.",
   "main": "index.js",
   "scripts": {
-    "start": "vite",
+    "start": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },

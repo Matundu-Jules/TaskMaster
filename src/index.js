@@ -10,12 +10,12 @@ const input = document.querySelector('form > input')
 // Array of todos
 const todos = [
     {
-        text: "I'm a todo",
+        text: 'Ma première tâche',
         done: false,
         editMode: true,
     },
     {
-        text: 'Todo done',
+        text: 'Tâche terminée',
         done: true,
         editMode: false,
     },

@@ -3,15 +3,25 @@ import { displayTodos } from './displayTodos'
 export const createTodoEditElement = (todo, index, todosArray) => {
     const li = document.createElement('li')
 
+    // div input-container
+    const inputContainer = document.createElement('div')
+    inputContainer.className = 'input-container'
+
+    // div btn-container
+    const btnContainer = document.createElement('div')
+    btnContainer.className = 'btn-container'
+
     // input element
     const input = document.createElement('input')
     input.type = 'text'
     input.value = todo.text
     input.classList.add('input-todo-edit')
 
+    inputContainer.appendChild(input)
+
     // btn for cancel modification
     const btnCancel = document.createElement('button')
-    btnCancel.innerHTML = 'Cancel'
+    btnCancel.innerHTML = 'Annuler'
     btnCancel.classList.add('btn', 'btn-cancel')
 
     btnCancel.addEventListener('click', (e) => {
@@ -22,8 +32,10 @@ export const createTodoEditElement = (todo, index, todosArray) => {
 
     // btn for save modification
     const btnSave = document.createElement('button')
-    btnSave.innerHTML = 'Save'
+    btnSave.innerHTML = 'Sauvegarder'
     btnSave.classList.add('btn', 'btn-save')
+
+    btnContainer.append(btnCancel, btnSave)
 
     btnSave.addEventListener('click', (e) => {
         e.preventDefault()
@@ -37,7 +49,7 @@ export const createTodoEditElement = (todo, index, todosArray) => {
     })
 
     // add elements to dom
-    li.append(input, btnCancel, btnSave)
+    li.append(inputContainer, btnContainer)
 
     return li
 }

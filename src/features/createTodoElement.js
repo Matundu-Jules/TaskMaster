@@ -7,15 +7,25 @@ export const createTodoElement = (todo, index, todosArray) => {
     // Create HTML element
     const li = document.createElement('li')
 
+    // div input-container
+    const inputContainer = document.createElement('div')
+    inputContainer.className = 'input-container'
+
+    // div btn-container
+    const btnContainer = document.createElement('div')
+    btnContainer.className = 'btn-container'
+
     // create delete btn
     const deleteBtn = document.createElement('button')
-    deleteBtn.innerHTML = 'Delete'
+    deleteBtn.innerHTML = 'Supprimer'
     deleteBtn.classList.add('btn', 'btn-delete')
 
     // create modify btn
     const editBtn = document.createElement('button')
-    editBtn.innerHTML = 'Edit'
+    editBtn.innerHTML = 'Modifier'
     editBtn.classList.add('btn', 'btn-edit')
+
+    btnContainer.append(deleteBtn, editBtn)
 
     // click event on delete btn
     deleteBtn.addEventListener('click', (e) => {
@@ -44,6 +54,8 @@ export const createTodoElement = (todo, index, todosArray) => {
     p.classList.add('todo-text')
     if (todo.done) p.classList.add('todo-text-done')
     p.innerText = todo.text
+
+    inputContainer.append(span, p)
 
     // event click on li :  toggle state of todo
     let doubleClickDetected = false
@@ -80,7 +92,7 @@ export const createTodoElement = (todo, index, todosArray) => {
     })
 
     // add btn to dom
-    li.append(span, p, editBtn, deleteBtn)
+    li.append(inputContainer, btnContainer)
 
     return li
 }

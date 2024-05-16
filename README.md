@@ -1,27 +1,43 @@
-# Todo List
+# TaskMaster
 
-![alt text](screen.png)
+[TaskMaster](https://taskmaster.julesmatundu.com) est une application web qui permet aux utilisateurs de créer et de gérer des listes de tâches de manière simple et efficace.
 
-## Specs :
+## Technologies Utilisées
 
-Vanilla JavaScript, HTML and CSS.
+- **JavaScript (Vanilla)**
+- **HTML**
+- **CSS**
+- **Vite.js**
 
-## NPM packages :
+## Fonctionnalités Principales
 
-Vite, prettier
+- **Ajouter une tâche** : Permet aux utilisateurs d'ajouter une nouvelle tâche à la liste.
+- **Afficher la liste** : Affiche toutes les tâches ajoutées.
+- **Supprimer une tâche** : Permet aux utilisateurs de supprimer une tâche de la liste.
+- **Valider une tâche** : Permet aux utilisateurs de marquer une tâche comme terminée.
+- **Éditer une tâche** : Permet aux utilisateurs de modifier une tâche existante.
 
-## Features :
+## Installation :
 
-- Add an item to a list
-- Display the list
-- Delete an item from the list
-- Validate a todo
-- Edit a todo
+### Prérequis
 
-## Scripts :
+Vous devez avoir **Node** et **npm** installés localement sur votre machine.
 
-`npm start` : Launch development server
+### Installation du Projet
 
-`npm run build` : Use vite for optimizing the code and save it in 'dist' folder at the root path
+1. Clonez ce repository.
+2. Installez les dépendances :
 
-`npm run preview` : Launch build server for testing the 'dist' folder
+```bash
+npm install
+```
+
+3. Démarrez le serveur de développement :
+
+```bash
+npm run dev
+```
+
+## Informations
+
+Ce projet est destiné à démontrer mes compétences en développement web et n'est pas destiné à une utilisation commerciale.

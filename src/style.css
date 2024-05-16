@@ -26,15 +26,16 @@ input {
   outline: 0;
   border: 1px solid #ddd;
   border-radius: 3px;
+  font-size: 15px;
 }
 
 button {
   cursor: pointer;
   color: white;
-  width: 80px;
+  width: 100px;
   height: 35px;
   margin: 0 4px;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   border: 0;
   border-radius: 5px;
   text-align: center;
@@ -67,9 +68,11 @@ p {
 ul {
   padding: 0;
   list-style: none;
+  width: 100%;
 }
 
 li {
+  width: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -99,13 +102,30 @@ li .todo.done {
 }
 
 .container {
-  width: 500px;
+  width: 70%;
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 20px;
 
   display: flex;
   flex-direction: column;
+}
+
+.input-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-taskmaster {
+  width: 50px;
+  margin-right: 10px;
 }
 
 .input-todo-edit {
@@ -122,4 +142,22 @@ li .todo.done {
   font-size: 12px;
   text-align: center;
   margin: 0;
+}
+
+/* Media Query */
+@media screen and (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+  li {
+    width: 100%;
+    flex-direction: column;
+  }
+  .input-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .btn-container {
+    width: 100%;
+  }
 }
